@@ -11,6 +11,14 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
+     <script>
+  let pass = prompt("Enter secret code to open the birthday surprise 🎁");
+  if (pass !== "aarohi2025") {
+    document.body.innerHTML = "<h1 style='text-align:center; color:red;'>🚫 Access Denied</h1>";
+    throw new Error("Wrong password");
+  }
+</script>
+
     <div id="wrapper">
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
