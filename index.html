@@ -12,12 +12,26 @@
 </head>
 <body>
      <script>
-  let pass = prompt("Enter secret code to open the birthday surprise 🎁");
-  if (pass !== "aarohi2025") {
-    document.body.innerHTML = "<h1 style='text-align:center; color:red;'>🚫 Access Denied</h1>";
-    throw new Error("Wrong password");
-  }
+  // Password logic
+  (function() {
+    const allowedPassword = "aarohi2025"; // Change this to your own secret
+
+    const entered = prompt("Enter secret code to open the birthday surprise 🎁");
+
+    if (entered !== allowedPassword) {
+      document.body.innerHTML = `
+        <div style="text-align:center; font-family:sans-serif; margin-top:100px;">
+          <h1 style="color: red;">🚫 Access Denied</h1>
+          <p>You entered the wrong password.</p>
+        </div>
+      `;
+      // Stop any further script execution
+      document.querySelectorAll("script").forEach(script => script.remove());
+      throw new Error("Unauthorized access");
+    }
+  })();
 </script>
+
 
     <div id="wrapper">
         <div class="flag__birthday">
