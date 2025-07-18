@@ -11,29 +11,19 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <script>
-  const password = "aarohi2025"; // ← Change this to your secret code
+  <script>
+  const password = "aarohi2025"; 
   const entered = prompt("Enter secret code to open the birthday surprise 🎁");
-
+  
   if (entered !== password) {
-    document.head.innerHTML = ""; // Remove any styles/scripts
-    document.body.innerHTML = `
-      <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:white;">
-        <div style="text-align:center;font-family:sans-serif;">
-          <h1 style="color:red;">🚫 Access Denied</h1>
-          <p style="font-size:1.2rem;">Wrong password entered!</p>
-          <p style="font-size:0.9rem;color:#555;margin-top:10px;">Reload the page to re-enter the password.</p>
-        </div>
-      </div>
-    `;
-    throw new Error("Access Denied: Wrong password");
+    // पूरी वेबसाइट को ब्लैंक कर दें (कुछ भी न दिखे)
+    document.head.innerHTML = "";
+    document.body.innerHTML = "";
+    window.stop(); // पेज लोडिंग रोकें
+    throw new Error("Access blocked: Wrong password");
   }
 </script>
-
-
-
-
-    <div id="wrapper">
+  <div id="wrapper">
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
             <img src="./images/1.png" alt="" width="350" class="flag__right">
